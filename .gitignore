@@ -1,0 +1,23 @@
+# RoundCube plugin files #
+# ########################
+config.inc.php
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# VIM swap files #
+##################
+*.swp
+
+# GIT specific #
+# ################
+!.gitignore
+!.gitkeep
+!.gitattributes

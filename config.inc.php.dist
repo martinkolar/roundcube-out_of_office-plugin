@@ -1,0 +1,49 @@
+<?php
+
+// Out of Office Plugin options
+// -----------------------
+
+// PEAR database DSN for performing the query. By default
+// Roundcube DB settings are used.
+$config['password_db_dsn'] = '';
+
+// The SQL query used to change the Out fo Office options.
+// The query can contain the following macros that will be expanded as follows:
+//      %h is replaced with the imap host (from the session info)
+//      %u is replaced with the username (from the session info)
+//      %l is replaced with the local part of the username
+//         (in case the username is an email address)
+//      %d is replaced with the domain part of the username
+//         (in case the username is an email address)
+// 	%a is replaced with the 'activate_value_enabled' or 'activate_value_disabled'
+// 	   according to values set lower in the config file
+// 	%s is replaced with the subject used in the Out of Office messsages
+// 	%b is replaced with the body used in the Out of Office messages 
+
+// The SQL query used to find out if Out of Offie is enabled. Return value has to comply with 
+// the 'activate_value_enabled' and 'activate_value_disabled' settings lower.
+//  $config['activate_query_show'] = 'SELECT `enabled` FROM alias_outofoffice WHERE email = %u';
+$config['activate_query_show'] = '';
+
+// The SQL query used to show body and subject of Out of Office message. The column names 
+// has to be 'subject' and 'body'.
+//  $config['message_query_show'] = 'SELECT `subject`, `body` FROM outofoffice WHERE email = %u ';
+$config['message_query_show'] = '';
+
+// The SQL query used to enable Out of Offie messages.  
+//  $config['activate_query_set'] = 'UPDATE alias_outofoffice SET `enabled` = %a WHERE email = %u';
+$config['activate_query_set'] = '';
+
+// The SQL query used to set body and subject of Out of Office message. 
+//  $config['message_query_set'] = 'UPDATE outofoffice SET `subject` = %s, `body` = %b WHERE email = %u';
+$config['message_query_set'] = '';
+
+// The value used in activate SQL queries - enabled 
+$config['activate_value_enabled'] = 1;
+
+// The value used in activate SQL queries - disabled
+$config['activate_value_disabled'] = '0';
+
+// By default domains in variables are using unicode.
+// Enable this option to use punycoded names
+$config['password_idn_ascii'] = false;
